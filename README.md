@@ -98,6 +98,28 @@ flowchart LR
     style G fill:#ef4444,color:#fff
 ```
 
+### Supported Input Formats
+
+| Format | Extension(s) | Backend | Notes |
+|---|---|---|---|
+| PDF | `.pdf` | Built-in | Searchable and scanned PDFs |
+| TIFF | `.tiff`, `.tif` | Pillow | Multi-page support |
+| JPEG | `.jpg`, `.jpeg` | Pillow | Most common photo format |
+| PNG | `.png` | Pillow | Lossless, alpha channel |
+| BMP | `.bmp` | Pillow | Uncompressed bitmap |
+| GIF | `.gif` | Pillow | Animated (first frame) |
+| WebP | `.webp` | Pillow | Modern web format |
+| JPEG 2000 | `.jp2` | Pillow | Medical/archival imaging |
+| HEIC / HEIF | `.heic`, `.heif` | pillow-heif | iPhone camera photos (optional dep) |
+| Camera RAW | `.cr2`, `.nef`, `.arw`, `.dng`, `.raw`, `.cr3`, `.orf`, `.rw2` | rawpy | Canon, Nikon, Sony, Fuji (optional dep) |
+| DICOM | `.dcm`, `.dicom` | pydicom | Medical imaging (optional dep) |
+| MP4 | `.mp4` | OpenCV | Video frame extraction |
+| AVI | `.avi` | OpenCV | Video frame extraction |
+| MOV | `.mov` | OpenCV | QuickTime video extraction |
+| MKV | `.mkv` | OpenCV | Matroska video extraction |
+
+> **Optional dependencies:** HEIC, RAW, and DICOM loaders require `pillow-heif`, `rawpy`, and `pydicom` respectively. Install them with `pip install pillow-heif rawpy pydicom` or include them in your Docker image. When missing, unsupported formats are logged once and gracefully skipped.
+
 ---
 
 ## Try It in 30 Seconds
