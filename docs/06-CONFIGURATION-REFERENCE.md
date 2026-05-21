@@ -75,6 +75,12 @@ against an already-OCR'd PDF without touching the OCR text layer.
 | `LANGUAGE_CONFIDENCE_THRESHOLD` | `0.4` | Minimum FastText confidence; below this threshold spans fall back to `"und"` |
 | `LANGUAGE_REDACT_SAMPLES` | `privilege_or_short_doc` | When to suppress `text_sample` (`true`, `false`, or `privilege_or_short_doc`) |
 
+### Language Tiers
+
+| Variable | Default | Description |
+|---|---|---|
+| `OCR_LANGUAGE_TIERS` | `core` | Controls which language model tier set is loaded. `core` = 34 languages (default, air-gapped). `core,extended` = 45 languages total. Set before starting the pipeline or in `.env`. See [`language_config.py`](../language_config.py) for the canonical language registry. |
+
 ### Video Ingestion
 
 Video files placed in the source directory are automatically detected and processed.
