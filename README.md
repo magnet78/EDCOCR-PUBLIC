@@ -504,6 +504,12 @@ CPU-only deployments with ONNX Runtime achieve roughly 25-30% of GPU throughput 
 
 **Extended tier (+11, opt-in):** Croatian, Slovak, Norwegian, Lithuanian, Latvian, Estonian, Serbian (Latin), Bengali, Marathi, Nepali, Thai.
 
+### Language Tier Configuration
+
+| Variable | Default | Allowed Values | Description |
+|---|---|---|---|
+| `OCR_LANGUAGE_TIERS` | `core` | `core`, `core,extended` | Controls which language model tier set is loaded at startup. The `core` tier includes 34 languages and is sufficient for most deployments. Adding `extended` loads 11 additional languages. Set via environment variable or `.env` file. See [`language_config.py`](language_config.py) for the full registry. |
+
 Activate the extended tier with `OCR_LANGUAGE_TIERS=core,extended`.
 
 ---
